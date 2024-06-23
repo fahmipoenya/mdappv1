@@ -174,7 +174,15 @@ export default function ListFilmLocal({navigation, route}) {
       ""
     );
   };
-
+  const handleClearFilter = () => {
+    return tampilFilter ? (
+      <Pressable onPress={() => setFilter({gendre: '', tahun: '', ph: '', column: '', sorting: ''})}>
+        <Text style={{textDecorationLine: 'underline', fontSize: 12}}>Clear filter</Text>
+      </Pressable>
+    ) : (
+      ""
+    );
+  };
   return (
     <SafeAreaView style={styles.page}>
       {/* <HeaderComponent page="ListFilm" /> */}
@@ -229,10 +237,11 @@ export default function ListFilmLocal({navigation, route}) {
         style={{
           marginHorizontal: 30,
           flexDirection: "row",
-          alignItems: "flex-start",
+          justifyContent: "space-between",
         }}
       >
         <View style={{ marginTop: -10 }}>{handleTextFilter()}</View>
+        <View style={{ marginTop: -10 }}>{handleClearFilter()}</View>
       </View>
 
       <Jarak />

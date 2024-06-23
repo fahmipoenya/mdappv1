@@ -169,7 +169,9 @@ export default function ListFilm({navigation, route}) {
   };
   const handleClearFilter = () => {
     return tampilFilter ? (
-      <Text style={{textDecorationLine: 'underline', fontSize: 12}}>Clear filter</Text>
+      <Pressable onPress={() => setFilter({gendre: '', tahun: '', ph: '', column: '', sorting: ''})}>
+        <Text style={{textDecorationLine: 'underline', fontSize: 12}}>Clear filter</Text>
+      </Pressable>
     ) : (
       ""
     );
