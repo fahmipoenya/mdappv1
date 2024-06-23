@@ -33,7 +33,7 @@ export default function Login() {
     } else if (password.length < 1) {
       alert("Enter Password!");
     } else {
-      fetch("http://md.rest2api.biz.id/webapi/v1/api/login.php", {
+      fetch("http://adminboxoffice.mdpictures.com/webapi/v1/api/login.php", {
         method: "POST",
         headers: {
           Authorization: "Basic " + base64.encode(user + ":" + pass),

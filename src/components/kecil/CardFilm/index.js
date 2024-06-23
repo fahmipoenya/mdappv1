@@ -26,7 +26,7 @@ const CardFilm = ({ film, index }) => {
         <View> 
           <View style={{flexDirection: "row"}}>
             <View style={styles.angka}>
-              <Text style={styles.textangka}>20</Text>
+              <Text style={styles.textangka}>{film.Id}</Text>
             </View>
             <Text style={styles.textjudul}>{film.Judul}</Text>
           </View>

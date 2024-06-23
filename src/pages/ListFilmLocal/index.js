@@ -6,6 +6,7 @@ import {
   View,
   Pressable,
   Modal,
+  SafeAreaView
 } from "react-native";
 import React, {
   useCallback,
@@ -73,7 +74,7 @@ export default function ListFilmLocal({navigation, route}) {
     }
   }, [filter.tahun, filter.ph, filter.genre, filter.column, filter.sorting, film, isLocal]);
 
-  const apiURL = "http://md.rest2api.biz.id/webapi/v1/api/getfilm.php";
+  const apiURL = "http://adminboxoffice.mdpictures.com/webapi/v1/api/getfilm.php";
 
   const getData = async () => {
     setLoading(true); 
@@ -175,7 +176,7 @@ export default function ListFilmLocal({navigation, route}) {
   };
 
   return (
-    <View style={styles.page}>
+    <SafeAreaView style={styles.page}>
       {/* <HeaderComponent page="ListFilm" /> */}
       <View>
         {/* <Text>{route.params ? route.params.gendre : ''}</Text> */}
@@ -267,14 +268,14 @@ export default function ListFilmLocal({navigation, route}) {
           </View>
         </View>
       </Modal>
-    </View>
+    </SafeAreaView>
   );
 }
 
 const styles = StyleSheet.create({
   page: { 
     flex: 1, 
-    backgroundColor: "#f5fcff"
+    backgroundColor: "#f5fcff",
     // backgroundColor: require("../../../assets/images/mdpLite.png")
   },
   container: {

@@ -5,13 +5,15 @@ import { ListFilm, Login } from "../pages";
 import Filter from "../pages/Filter";
 import Sort from "../pages/Sort";
 import ListFilmLocal from "../pages/ListFilmLocal";
+import { StatusBar, Platform } from 'react-native';
 
 const Stack = createNativeStackNavigator();
 const TopTab = createMaterialTopTabNavigator();
+const heightStatus = Platform.OS === 'android'?StatusBar.currentHeight:24;
 
 function MyTabs({ navigation, route }) {
   return ( 
-      <TopTab.Navigator screenOptions={{ tabBarStyle: { marginBottom: -30 } }}>
+      <TopTab.Navigator  style={{marginTop:heightStatus}} screenOptions={{ tabBarStyle: { marginBottom: -30 } }}>
         <TopTab.Screen
           name="Film Local"
           component={ListFilm}
