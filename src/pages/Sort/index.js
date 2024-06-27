@@ -111,7 +111,7 @@ export default function Sort({navigation}) {
             param="test"
           />
         </View>
-        <View style={{ marginHorizontal: 30 }}>
+        {/* <View style={{ marginHorizontal: 30 }}>
           <Tombol
             title="Clear All"
             type="text"
@@ -119,7 +119,7 @@ export default function Sort({navigation}) {
             onPress={() => onClear()}
             param="test"
           />
-        </View>
+        </View> */}
         </View>
       </ScrollView>
   )

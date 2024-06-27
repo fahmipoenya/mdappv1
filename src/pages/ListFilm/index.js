@@ -6,6 +6,7 @@ import {
   View,
   Pressable,
   Modal,
+  SafeAreaView
 } from "react-native";
 import React, {
   useCallback,
@@ -67,7 +68,7 @@ export default function ListFilm({navigation, route}) {
     }
   }, [filter.tahun, filter.ph, filter.genre, filter.column, filter.sorting, film, isLocal]);
 
-  const apiURL = "http://md.rest2api.biz.id/webapi/v1/api/getfilm.php";
+  const apiURL = "http://adminboxoffice.mdpictures.com/webapi/v1/api/getfilm.php";
 
   const getData = async () => {
     setLoading(true); 
@@ -161,14 +162,22 @@ export default function ListFilm({navigation, route}) {
 
   const handleTextFilter = () => {
     return tampilFilter ? (
-      <Text style={styles.textfilter}>Filter by : {tampilFilter}</Text>
+      <Text style={styles.textfilter}>Filter by : {tampilFilter}</Text> 
     ) : (
       ""
     );
   };
-
+  const handleClearFilter = () => {
+    return tampilFilter ? (
+      <Pressable onPress={() => setFilter({gendre: '', tahun: '', ph: '', column: '', sorting: ''})}>
+        <Text style={{textDecorationLine: 'underline', fontSize: 12}}>Clear filter</Text>
+      </Pressable>
+    ) : (
+      ""
+    );
+  };
   return (
-    <View style={styles.page}>
+    <SafeAreaView style={styles.page}>
       {/* <HeaderComponent page="ListFilm" /> */}
       <View>
         {/* <Text>{route.params ? route.params.gendre : ''}</Text> */}
@@ -221,10 +230,11 @@ export default function ListFilm({navigation, route}) {
         style={{
           marginHorizontal: 30,
           flexDirection: "row",
-          alignItems: "flex-start",
+          justifyContent: "space-between",
         }}
       >
         <View style={{ marginTop: -10 }}>{handleTextFilter()}</View>
+        <View style={{ marginTop: -10 }}>{handleClearFilter()}</View>
       </View>
 
       <Jarak />
@@ -261,7 +271,7 @@ export default function ListFilm({navigation, route}) {
           </View>
         </View>
       </Modal>
-    </View>
+    </SafeAreaView>
   );
 }
 

@@ -33,7 +33,7 @@ export default function Login() {
     } else if (password.length < 1) {
       alert("Enter Password!");
     } else {
-      fetch("http://md.rest2api.biz.id/webapi/v1/api/login.php", {
+      fetch("http://adminboxoffice.mdpictures.com/webapi/v1/api/login.php", {
         method: "POST",
         headers: {
           Authorization: "Basic " + base64.encode(user + ":" + pass),
@@ -80,8 +80,7 @@ export default function Login() {
             resizeMode="contain"
           />
         </View>
-        <Jarak height={20} />
-        <Jarak height={25} />
+        <Jarak height={10} /> 
         <View style={styles.cardLogin}>
           <InputIcon
             placeholder="Email or Username"
@@ -149,7 +148,7 @@ const styles = StyleSheet.create({
   },
   logo: {
     alignItems: "center",
-    marginTop: responsiveHeight(20),
+    marginTop: responsiveHeight(10),
   },
   tinyLogo: {
     width: Dimensions.get("window").width / 2,

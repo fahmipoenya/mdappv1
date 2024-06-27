@@ -58,7 +58,7 @@ export default function Filter({route, navigation}) {
     navigation.navigate("MyTabs");
   };
   
-  const apiURL = "http://md.rest2api.biz.id/webapi/v1/api/cbogenre.php";
+  const apiURL = "http://adminboxoffice.mdpictures.com/webapi/v1/api/cbogenre.php";
 
   const getGendre = async () => { 
     const respon = await fetch(apiURL, {
@@ -83,7 +83,7 @@ export default function Filter({route, navigation}) {
     // console.log(reponJson.data[0].Item);
   };
  
-  const apiURL2 = "http://md.rest2api.biz.id/webapi/v1/api/cboph.php";
+  const apiURL2 = "http://adminboxoffice.mdpictures.com/webapi/v1/api/cboph.php";
 
   const getPH = async () => { 
     const respon = await fetch(apiURL2, {
@@ -106,7 +106,7 @@ export default function Filter({route, navigation}) {
       setDataPH(PHArray);
     } 
   };
-  const apiURL3 = "http://md.rest2api.biz.id/webapi/v1/api/cboyear.php";
+  const apiURL3 = "http://adminboxoffice.mdpictures.com/webapi/v1/api/cboyear.php";
 
   const getTahun = async () => { 
     const respon = await fetch(apiURL3, {
@@ -207,7 +207,7 @@ export default function Filter({route, navigation}) {
             param="test"
           />
         </View>
-        <View style={{ marginHorizontal: 30 }}>
+        {/* <View style={{ marginHorizontal: 30 }}>
           <Tombol
             title="Clear All"
             type="text"
@@ -215,7 +215,7 @@ export default function Filter({route, navigation}) {
             onPress={() => onClear()}
             param="test"
           />
-        </View>
+        </View> */}
       </View>
     </ScrollView>
   );
